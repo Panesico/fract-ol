@@ -89,4 +89,4 @@ int32_t	main(void)
 ```
 
 
-![Example](./assets/XPM_Demo.png)
+![Example](assets/XPM_Demo.png)
