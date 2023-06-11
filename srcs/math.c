@@ -6,7 +6,7 @@
 /*   By: panesico <panesico@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/04 15:29:09 by panesico          #+#    #+#             */
-/*   Updated: 2023/06/04 15:29:09 by panesico         ###   ########.fr       */
+/*   Updated: 2023/06/11 16:42:02 by jorgfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@ void	ft_put_pixel(t_fr *fr, int k, int x, int y)
 	mlx_put_pixel(fr->img, y, x, ft_rgb(fr, k));
 }
 
-void	ft_complex(t_fr *fr, double swap, int x, int y)
+void	ft_complex_mandel(t_fr *fr, double swap, int x, int y)
 {
-	int k;
+	int	k;
 
 	k = 1;
-	while (k <= 1000)
+	while (k <= 400)
 	{
 		swap = fr->r;
 		fr->r = (fr->r * fr->r) - (fr->i * fr->i) + fr->n2;
@@ -32,17 +32,15 @@ void	ft_complex(t_fr *fr, double swap, int x, int y)
 			break ;
 		k++;
 	}
-	fr->iter = k;
 	ft_put_pixel(fr, k, x, y);
 }
 
-void	ft_fractal_math(t_fr *fr)
+void	ft_fractal_math_mandel(t_fr *fr)
 {
-	double i;
-	double j;
-	double swap;
+	double	i;
+	double	j;
+	double	swap;
 
-	
 	i = 0;
 	swap = 0;
 	while (i < HEIGHT)
@@ -54,9 +52,13 @@ void	ft_fractal_math(t_fr *fr)
 			fr->n2 = fr->x + (j / (WIDTH / fr->reso_w));
 			fr->r = 0;
 			fr->i = 0;
-			ft_complex(fr, swap, i, j);
+			ft_complex_mandel(fr, swap, i, j);
 			j++;
 		}
 		i++;
 	}
+	if (fr->color_offset < 256)
+		fr->color_offset += 4;
+	else
+		fr->color_offset = 0;
 }

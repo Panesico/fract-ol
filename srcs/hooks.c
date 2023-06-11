@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   hooks.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jorgfern <jorgfern@student.42malaga.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/07 19:28:46 by jorgfern          #+#    #+#             */
+/*   Updated: 2023/06/11 16:40:58 by jorgfern         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "fractol.h"
 
 void	hook(struct mlx_key_data keydata, void *param)
@@ -8,6 +20,7 @@ void	hook(struct mlx_key_data keydata, void *param)
 	if (keydata.key == MLX_KEY_ESCAPE)
 	{
 		mlx_terminate(fr->mlx);
+		ft_free_struc(fr);
 		exit(EXIT_SUCCESS);
 	}
 	if (keydata.action == MLX_RELEASE)
@@ -20,6 +33,6 @@ void	hook(struct mlx_key_data keydata, void *param)
 			fr->x = fr->x + ((500 / (fr->rel_w / fr->reso_w) / -2));
 		else if (keydata.key == MLX_KEY_RIGHT)
 			fr->x = fr->x + ((500 / (fr->rel_w / fr->reso_w) / 2));
-		ft_fractal_math(fr);
+		fr->fractal_type(fr);
 	}
 }
