@@ -19,13 +19,10 @@ MLX        = $(addprefix $(MLX_DIR), libmlx42.a)
 # Linkers
 LNK        = -Ofast
 
-ifeq ($(shell whoami), panesico)
-	BREW = /usr/lib/x86_64-linux-gnu/libglfw.so
-else
-	BREW = "/Users/$(USER)/.brew/opt/glfw/lib/"
-endif
+BREW = "/Users/jorgfern/.brew/opt/glfw/lib/"
+
 # Se compila el archivo binario (ejecutable).
-all: obj $(LIBFT) $(NAME)
+all: obj $(LIBFT) $(NAME) 
 # Crea la carpeta donde estará los objetos.
 obj:
 	@mkdir -p $(OBJ_DIR)
@@ -34,10 +31,13 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 # Compila la biblioteca libft.a
 $(LIBFT):
 	@$(MAKE) -C $(LIBFT_DIR)
+
+$(MLX):
+	@$(MAKE) -C $(MLX_DIR)
 # Se compila los objetos con las librerías y archivos
 $(NAME): $(OBJ)
 	@echo "(ﾉ◕ヮ◕)ﾉ*:・ﾟ✧ Compilando, espere unos segundos..."
-	@gcc $(OBJ) $(LNK) $(MLX) -lglfw -lGLU -lGL -lXrandr -lXxf86vm -lXi -lXinerama -lX11 -lrt -ldl  -L$(LIBFT_DIR) -lft -lm -o $(NAME)
+	@gcc $(OBJ) -lglfw -L $(BREW) -o $(NAME) $(LIBFT) $(MLX)
 	@echo "(•̀ᴗ•́)و $(NAME) generado!"
 # Remueve todos los archivos objetos
 clean:

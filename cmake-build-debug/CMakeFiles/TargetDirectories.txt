@@ -1,5 +1,0 @@
-/home/panesico/CLionProjects/fract-ol/cmake-build-debug/CMakeFiles/LIBFT.dir
-/home/panesico/CLionProjects/fract-ol/cmake-build-debug/CMakeFiles/FRACTOL.dir
-/home/panesico/CLionProjects/fract-ol/cmake-build-debug/CMakeFiles/fractol.dir
-/home/panesico/CLionProjects/fract-ol/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/panesico/CLionProjects/fract-ol/cmake-build-debug/CMakeFiles/rebuild_cache.dir

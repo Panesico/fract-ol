@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jorgfern <jorgfern@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/09 22:31:59 by jorgfern          #+#    #+#             */
-/*   Updated: 2023/06/11 18:15:45 by jorgfern         ###   ########.fr       */
+/*   Created: 2023/06/11 16:42:19 by jorgfern          #+#    #+#             */
+/*   Updated: 2023/06/11 16:42:19 by jorgfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include "../libft/libft.h"
 # include "../MLX42/include/MLX42/MLX42.h"
 # include <math.h>
-# include <GLFW/glfw3.h>
-#include <dlfcn.h>
 # define WIDTH 1280.0
 # define HEIGHT 720.0
 
