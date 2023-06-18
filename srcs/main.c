@@ -50,4 +50,5 @@ int	main(int argc, char **argv)
 	fr->fractal_type(fr);
 	mlx_loop(fr->mlx);
 	mlx_terminate(fr->mlx);
+	ft_free_struc(fr);
 }
