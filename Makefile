@@ -16,13 +16,11 @@ SRC        = $(addprefix $(SRC_DIR),$(SRC_FILES))
 OBJ        = $(addprefix $(OBJ_DIR),$(OBJ_FILES))
 LIBFT      = $(addprefix $(LIBFT_DIR),libft.a)
 MLX        = $(addprefix $(MLX_DIR), libmlx42.a)
-# Linkers
-LNK        = -Ofast
 
-BREW = "/Users/jorgfern/.brew/opt/glfw/lib/"
+BREW = "/Users/$(USER)/.brew/opt/glfw/lib/"
 
 # Se compila el archivo binario (ejecutable).
-all: obj $(LIBFT) $(NAME) 
+all: obj $(LIBFT) $(NAME)
 # Crea la carpeta donde estará los objetos.
 obj:
 	@mkdir -p $(OBJ_DIR)

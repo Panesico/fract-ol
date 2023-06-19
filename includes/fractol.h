@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   fractol.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jorgfern <jorgfern@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: jorgfern <jorgfern@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/11 16:42:19 by jorgfern          #+#    #+#             */
-/*   Updated: 2023/06/11 16:42:19 by jorgfern         ###   ########.fr       */
+/*   Updated: 2023/06/19 20:44:01 by jorgfern         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,6 @@ void		hook(struct mlx_key_data keydata, void *param);
 void		my_scrollhook(double xdelta, double ydelta, void *param);
 void		ft_put_pixel(t_fr *fr, int k, int x, int y);
 void		ft_free_struc(t_fr *fr);
+int			ft_is_num(int argc, char **argv);
 
 #endif
