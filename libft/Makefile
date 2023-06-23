@@ -19,20 +19,20 @@ OBJBON	= ${SRCBON:.c=.o}
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(AR) $(NAME) $(OBJ)
-	@echo Making...
+	@$(AR) $(NAME) $(OBJ)
+	@echo Making Libft...
 bonus: $(OBJBON) $(OBJ)
 	@$(AR) $(NAME) $(OBJBON) $(OBJ)
-	@echo Making bonus...
+	@echo Making Libft bonus...
 clean:
 	@rm -rf *.o
-	@echo Deleting .o files
+	@echo Deleting Libft .o files
 fclean: clean
 	@rm -f $(NAME)
-	@echo Deleting .a file
+	@echo Deleting Libft.a file
 
 %.o: %.c
-	gcc $(CFLAGS) -o $@ -c $<
+	@gcc $(CFLAGS) -o $@ -c $<
 
 re: fclean all
 
